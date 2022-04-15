@@ -36,6 +36,7 @@ grist.onRecords((_rows, _mappings) => {
 async function fetchPrices(symbols) {
   const key = `polygon-${new Date().toISOString().slice(0, 13)}`;
   const today = new Date().toISOString().slice(0, 10);
+  console.log(today);
   // We are querying daily aggregated data, so we will cache it for 1 hour.
   if (!localStorage.getItem(key)) {
     // Endpoint documentation can be found at: 
